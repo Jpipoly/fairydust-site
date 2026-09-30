@@ -9,13 +9,15 @@ SPARK = ('<svg class="mark" viewBox="0 0 48 48" fill="currentColor" aria-hidden=
          f'<path d="{star(17, 29, 15, .1)}"/><path d="{star(38, 11, 8, .1)}"/><path d="{star(39.5, 38, 4.5, .1)}" opacity=".75"/></svg>')
 STAR1 = f'<svg viewBox="-10 -10 20 20" fill="currentColor"><path d="{star(0, 0, 10, .1)}"/></svg>'
 LOGO = f'<span class="logo">{SPARK}<span class="wm">fairydust<span class="wm-v">ventures</span></span></span>'
-MENU = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>'
+MENU = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path class="l1" d="M4 7h16"/><path class="l2" d="M4 12h16"/><path class="l3" d="M4 17h16"/></svg>'
+ARROW = '<span class="btn-ic" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>'
 
 import hashlib
 def ver(path):
     return hashlib.md5(open(path, "rb").read()).hexdigest()[:8]
 
 def page(slug, title, desc, body):
+    body = body.replace("{ARROW}", ARROW)
     def nav_link(href, label, key):
         cur = ' aria-current="page"' if key == slug else ''
         return f'<a href="{href}"{cur}>{label}</a>'
@@ -110,8 +112,8 @@ home = f'''    <section class="hero" data-sparkle>
         <div class="hero-copy">
           <h1>On Tuesdays<br />we make<br /><span class="shimmer">millionaires</span></h1>
           <div class="hero-ctas">
-            <a href="founders" class="btn btn-brown">For Founders</a>
-            <a href="investors" class="btn btn-outline">For Investors</a>
+            <a href="founders" class="btn btn-brown">For Founders{ARROW}</a>
+            <a href="investors" class="btn btn-outline">For Investors{ARROW}</a>
           </div>
         </div>
         <div class="hero-mark" aria-hidden="true">
@@ -161,7 +163,7 @@ home = f'''    <section class="hero" data-sparkle>
         <div class="cta-card reveal">
           <span class="tw tw1" aria-hidden="true">{SPARK}</span><span class="tw tw2" aria-hidden="true">{SPARK}</span>
           <h2 class="h2">Want Some Sprinkles?</h2>
-          <a href="founders" class="btn btn-pink">Initiate Magic</a>
+          <a href="founders" class="btn btn-pink">Initiate Magic{ARROW}</a>
         </div>
       </div>
     </section>'''.replace('{SPARK}', SPARK)
@@ -191,7 +193,7 @@ investors = '''    <section class="page-hero">
           <p>Receive exclusive updates on the latest Fairydust deal opportunities straight to your inbox.</p>
           <form data-mailto="ohhey@fairydust.vc" data-subject="Get on the Fairydust deals list" style="margin-top:28px">
             <div class="field"><label for="em">Email address *</label><input id="em" name="Email address" type="email" autocomplete="email" inputmode="email" required /></div>
-            <button class="btn btn-pink" type="submit">Join the list</button>
+            <button class="btn btn-pink" type="submit">Join the list{ARROW}</button>
             <p class="form-ok">Your email app should now open with a message ready to send.</p>
           </form>
         </div>
@@ -204,7 +206,7 @@ founders = '''    <section class="page-hero">
       <div class="wrap">
         <h1>We want your vision, not your money.</h1>
         <p class="lead">Share your ideas so we can provide the capital and expert operational backing you need to scale.</p>
-        <div class="hero-ctas"><a href="#pitch" class="btn btn-brown">Get in Touch</a></div>
+        <div class="hero-ctas"><a href="#pitch" class="btn btn-brown">Get in Touch{ARROW}</a></div>
       </div>
     </section>
 
@@ -230,7 +232,7 @@ founders = '''    <section class="page-hero">
             <div class="field"><label for="e">Email *</label><input id="e" name="Email" type="email" autocomplete="email" inputmode="email" required /></div>
             <div class="field"><label for="i">Idea *</label><textarea id="i" name="Idea" required></textarea></div>
             <div class="field"><label for="d">Pitch deck</label><input id="d" name="Pitch deck" type="url" inputmode="url" placeholder="Link to your deck" /></div>
-            <button class="btn btn-pink" type="submit">Send</button>
+            <button class="btn btn-pink" type="submit">Send{ARROW}</button>
             <p class="form-ok">Your email app should now open with your idea ready to send.</p>
           </form>
         </div>
