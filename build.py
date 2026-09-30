@@ -103,14 +103,31 @@ TEAM = [
     ("The PR Whisperer", "Makes your story impossible for press and LPs to ignore."),
 ]
 
+_S1, _S2, _S3 = star(17, 29, 15, .1), star(38, 11, 8, .1), star(39.5, 38, 4.5, .1)
+_FLARE = star(0, 0, 2.2, .12)
+import math
+_dust = "".join(
+    f'<circle cx="{24 + r * math.cos(math.radians(a)):.2f}" cy="{24 + r * math.sin(math.radians(a)):.2f}" r="{s}" fill="{c}" style="--o:{o}"/>'
+    for a, r, s, c, o in [(15, 21, .55, "#ff7143", .7), (80, 23, .4, "#b35a53", .5), (140, 20, .45, "#ffaea3", .9),
+                          (200, 22, .5, "#ff7143", .6), (255, 19, .35, "#b35a53", .6), (320, 23, .4, "#ffaea3", .8)]
+)
 HERO_MARK = ('<svg viewBox="0 0 48 48" class="hs-svg"><defs>'
   '<linearGradient id="hsg" x1="0" y1="0" x2="1" y2="1">'
   '<stop offset="0" stop-color="#ffaea3"/><stop offset=".5" stop-color="#ff7143"/><stop offset="1" stop-color="#b35a53"/></linearGradient>'
   '<linearGradient id="hsg2" x1="0" y1="0" x2="1" y2="1">'
-  '<stop offset="0" stop-color="#ffaea3"/><stop offset="1" stop-color="#ff7143"/></linearGradient></defs>'
-  f'<path class="s1" fill="url(#hsg)" d="{star(17, 29, 15, .1)}"/>'
-  f'<path class="s2" fill="url(#hsg2)" d="{star(38, 11, 8, .1)}"/>'
-  f'<path class="s3" fill="#b35a53" d="{star(39.5, 38, 4.5, .1)}"/></svg>')
+  '<stop offset="0" stop-color="#ffaea3"/><stop offset="1" stop-color="#ff7143"/></linearGradient>'
+  '<linearGradient id="glint" x1="0" y1="0" x2="1" y2="0">'
+  '<stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".75"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>'
+  f'<clipPath id="hsclip"><path d="{_S1}"/><path d="{_S2}"/><path d="{_S3}"/></clipPath></defs>'
+  f'<g class="dust">{_dust}</g>'
+  f'<g class="g1"><path class="s1" fill="url(#hsg)" d="{_S1}"/></g>'
+  f'<g class="g2"><path class="s2" fill="url(#hsg2)" d="{_S2}"/></g>'
+  f'<g class="g3"><path class="s3" fill="#b35a53" d="{_S3}"/></g>'
+  '<g clip-path="url(#hsclip)"><rect class="glint" x="-14" y="-10" width="12" height="70" fill="url(#glint)" transform="rotate(20 24 24)"/></g>'
+  f'<path class="flare f1" fill="#fff" d="{_FLARE}" transform="translate(17 14.5)"/>'
+  f'<path class="flare f2" fill="#fff" d="{_FLARE}" transform="translate(45.5 11)"/>'
+  f'<path class="flare f3" fill="#fff" d="{_FLARE}" transform="translate(32 29)"/>'
+  '</svg>')
 
 MARQUEE = f"<i>{SPARK}</i>".join(f"<span>{n}</span>" for n, _ in WORK)
 
@@ -136,9 +153,7 @@ home = f'''    <section class="hero" data-sparkle>
       <div class="wrap magic-grid">
         <h2 class="h2 reveal">The Magic Logic</h2>
         <div class="magic-body reveal">
-          <p class="first">Yes. We inject capital.</p>
-          <p class="lead">But we don't just inject capital; we sprinkle the operational magic required to scale.</p>
-          <p>Our team of operators handles the legal, finance, and PR heavy lifting, allowing your startup to focus on the vision while we handle the boring work.</p>
+          <p class="first">Our team of operators handles the legal, finance, and PR heavy lifting, allowing your startup to focus on the vision while we handle the boring work.</p>
           <p class="quiet">We are the fairydust sprinklers, turning ambitious ideas into industry powerhouses with surgical precision and a sprinkle of mystery.</p>
         </div>
       </div>
