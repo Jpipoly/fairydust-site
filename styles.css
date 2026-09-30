@@ -128,9 +128,11 @@ section { padding: 112px 0; }
 .team { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .member {
   background: var(--brown-700); border: 1px solid var(--line-dark); border-radius: var(--radius);
-  padding: 32px; display: flex; flex-direction: column; gap: 14px; min-height: 260px;
+  padding: 32px;
+  /* subgrid lines up icon, title and text rows across all three cards */
+  display: grid; grid-row: span 3; grid-template-rows: subgrid; row-gap: 14px; align-content: start;
 }
-.member .spark { width: 40px; height: 40px; color: var(--pink); margin-bottom: auto; }
+.member .spark { width: 40px; height: 40px; color: var(--pink); margin-bottom: 18px; }
 .member h3 { font-family: var(--display); font-weight: 700; font-size: 32px; line-height: 1.1; color: var(--blush); }
 .member p { font-size: 18px; color: var(--blush); opacity: .9; }
 
@@ -300,7 +302,6 @@ footer { background: var(--brown-900); border-top: 1px solid var(--line-dark); p
   .work-list .work p { grid-column: 2; }
   .magic-grid, .split { grid-template-columns: 1fr; gap: 36px; }
   .team { grid-template-columns: 1fr; }
-  .member { min-height: 0; }
 }
 
 /* ---------- iPhone ---------- */
@@ -329,6 +330,7 @@ footer { background: var(--brown-900); border-top: 1px solid var(--line-dark); p
   .section-head { margin-bottom: 36px; }
   .member { padding: 26px 22px; }
   .member .spark { width: 32px; height: 32px; margin-bottom: 8px; }
+  .member { grid-row: auto; grid-template-rows: auto; }
   .member h3 { font-size: 28px; }
 
   .work-list .work { grid-template-columns: 1fr; gap: 8px; padding: 26px 0; }
