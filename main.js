@@ -86,9 +86,9 @@ if (hero && !calm && hero.animate) {
     for (let i = 0; i < 14; i++) spark(x, y, 110);
   });
 
-  // One welcome burst from the brand tile's big star
+  // One welcome burst from the logo card's star mark
   // (on phones the tile is hidden, so burst from the headline instead)
-  const tileStar = hero.querySelector(".hero-mark .tw1");
+  const tileStar = hero.querySelector(".hero-mark .mark-lg");
   const tile = tileStar && tileStar.offsetParent ? tileStar : hero.querySelector(".shimmer");
   if (tile) {
     setTimeout(() => {

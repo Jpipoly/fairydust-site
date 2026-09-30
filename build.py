@@ -115,8 +115,8 @@ home = f'''    <section class="hero" data-sparkle>
           </div>
         </div>
         <div class="hero-mark" aria-hidden="true">
-          <span class="tw tw1">{SPARK}</span><span class="tw tw2">{SPARK}</span><span class="tw tw3">{SPARK}</span>
-          {LOGO}
+          <span class="mark-lg">{SPARK}</span>
+          <span class="wordmark-lg"><span class="wm">fairydust<span class="wm-v">ventures</span></span></span>
         </div>
       </div>
     </section>

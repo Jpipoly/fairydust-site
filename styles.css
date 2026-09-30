@@ -92,13 +92,19 @@ img, svg { display: block; max-width: 100%; }
 .hero-mark {
   position: relative; aspect-ratio: 4 / 5; border-radius: 28px; overflow: hidden;
   background:
-    radial-gradient(120% 80% at 80% 0%, rgba(179, 90, 83, .55), transparent 60%),
-    radial-gradient(90% 70% at 0% 100%, rgba(255, 113, 67, .22), transparent 60%),
+    radial-gradient(70% 55% at 50% 42%, rgba(179, 90, 83, .45), transparent 70%),
     var(--brown-900);
-  display: grid; place-items: end start; padding: 28px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 28px;
+  padding: 32px; color: var(--pink);
   box-shadow: 0 40px 80px -30px rgba(54, 26, 12, .55);
 }
-.hero-mark .logo { font-size: 26px; position: relative; z-index: 1; }
+.mark-lg { width: 56%; animation: glow 5s ease-in-out infinite; }
+.mark-lg svg { width: 100%; height: auto; }
+.wordmark-lg { font-size: 30px; line-height: 1; white-space: nowrap; }
+@keyframes glow {
+  0%, 100% { filter: drop-shadow(0 0 0 rgba(255, 174, 163, 0)); transform: scale(1); }
+  50% { filter: drop-shadow(0 0 22px rgba(255, 174, 163, .45)); transform: scale(1.03); }
+}
 
 /* ---------- Sections ---------- */
 section { padding: 112px 0; }
@@ -281,7 +287,7 @@ footer { background: var(--brown-900); border-top: 1px solid var(--line-dark); p
 .motto blockquote::before { content: "“"; display: block; font-size: 1.6em; line-height: .6; color: var(--rose); margin-bottom: 8px; }
 
 @media (prefers-reduced-motion: reduce) {
-  .tw, .marquee-track, .hs, .shimmer { animation: none; }
+  .tw, .marquee-track, .hs, .shimmer, .mark-lg { animation: none; }
   .hs { opacity: .6; transform: none; }
   .shimmer { color: var(--brown-700); background: none; }
 }
