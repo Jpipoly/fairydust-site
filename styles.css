@@ -14,8 +14,8 @@
   --line-dark: rgba(237, 194, 180, 0.18);
   --radius: 20px;
   --max: 1120px;
-  --display: "Fraunces", Georgia, serif;
-  --sans: "Space Grotesk", system-ui, -apple-system, sans-serif;
+  --display: "Playfair Display", Georgia, serif;
+  --sans: "DM Sans", system-ui, -apple-system, sans-serif;
   --gutter: 20px;
 }
 
@@ -29,7 +29,6 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
-  font-variation-settings: "WONK" 0, "SOFT" 0;
 }
 a { color: inherit; text-decoration: none; }
 img, svg { display: block; max-width: 100%; }
@@ -38,7 +37,7 @@ img, svg { display: block; max-width: 100%; }
 /* ---------- Logo ---------- */
 .logo { display: inline-flex; align-items: center; gap: 10px; color: var(--pink); line-height: 1; white-space: nowrap; font-size: 22px; }
 .logo svg { width: 1.45em; height: 1.45em; flex: none; }
-.wm { font-family: var(--sans); font-weight: 700; letter-spacing: -0.04em; }
+.wm { font-family: var(--sans); font-weight: 700; letter-spacing: -0.03em; }
 .wm-v { font-weight: 400; letter-spacing: -0.02em; margin-left: .28em; opacity: .78; }
 
 /* ---------- Nav (pink pill, as on the original) ---------- */
@@ -84,8 +83,8 @@ img, svg { display: block; max-width: 100%; }
 .hero { background: var(--white); color: var(--brown-700); padding: 168px 0 112px; position: relative; overflow: hidden; }
 .hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 56px; align-items: center; }
 .hero h1 {
-  font-family: var(--display); font-weight: 700; font-variation-settings: "opsz" 144, "WONK" 0, "SOFT" 0;
-  font-size: min(14.2cqi, 132px); line-height: .92; letter-spacing: -0.02em; text-transform: uppercase;
+  font-family: var(--display); font-weight: 700;
+  font-size: min(13.8cqi, 128px); line-height: .92; letter-spacing: -0.02em; text-transform: uppercase;
 }
 .hero-copy { container-type: inline-size; min-width: 0; }
 .hero-ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 40px; }
@@ -109,7 +108,7 @@ img, svg { display: block; max-width: 100%; }
 /* ---------- Sections ---------- */
 section { padding: 112px 0; }
 .h2 {
-  font-family: var(--display); font-weight: 700; font-variation-settings: "opsz" 144, "WONK" 0, "SOFT" 0;
+  font-family: var(--display); font-weight: 700;
   font-size: clamp(40px, 6vw, 88px); line-height: 1; letter-spacing: -0.015em;
 }
 .lead { font-size: clamp(20px, 2.2vw, 26px); line-height: 1.45; }
@@ -150,7 +149,7 @@ section { padding: 112px 0; }
 /* ---------- Subpages ---------- */
 .page-hero { background: var(--white); color: var(--brown-700); padding: 160px 0 96px; }
 .page-hero h1 {
-  font-family: var(--display); font-weight: 700; font-variation-settings: "opsz" 144, "WONK" 0, "SOFT" 0;
+  font-family: var(--display); font-weight: 700;
   font-size: clamp(38px, 6vw, 80px); line-height: 1; letter-spacing: -0.015em; max-width: 980px;
 }
 .page-hero .lead { margin-top: 28px; max-width: 760px; color: var(--brown-700); }

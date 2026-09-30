@@ -33,7 +33,7 @@ def page(slug, title, desc, body):
   <link rel="apple-touch-icon" href="apple-touch-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,600..700,0..100,0..1&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css?v={ver("styles.css")}" />
   <script>document.documentElement.classList.add("js")</script>
 </head>
@@ -61,7 +61,7 @@ def page(slug, title, desc, body):
       <div class="foot">
         {LOGO}
         <div class="foot-info">
-          1700 Montgomery Street Suite 108, San Francisco, CA 94111<br />
+          1700 Montgomery Street Suite 108,<br />San Francisco, CA 94111<br />
           <a href="mailto:ohhey@fairydust.vc">ohhey@fairydust.vc</a>
         </div>
         <nav class="foot-nav"><a href="/">Home</a><a href="investors">For Investors</a><a href="founders">For Founders</a></nav>
