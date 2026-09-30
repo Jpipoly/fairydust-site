@@ -114,6 +114,15 @@ for i in range(22):
         f'--dx:{_rng.uniform(-14, 14):.0f}px;--dy:{_rng.uniform(-22, -6):.0f}px">{STAR1}</span>')
 HERO_SPARKLES = '<div class="hero-sparkles" aria-hidden="true">' + "".join(_spots) + "</div>"
 
+HERO_MARK = ('<svg viewBox="0 0 48 48" class="hs-svg"><defs>'
+  '<linearGradient id="hsg" x1="0" y1="0" x2="1" y2="1">'
+  '<stop offset="0" stop-color="#ffaea3"/><stop offset=".5" stop-color="#ff7143"/><stop offset="1" stop-color="#b35a53"/></linearGradient>'
+  '<linearGradient id="hsg2" x1="0" y1="0" x2="1" y2="1">'
+  '<stop offset="0" stop-color="#ffaea3"/><stop offset="1" stop-color="#ff7143"/></linearGradient></defs>'
+  f'<path class="s1" fill="url(#hsg)" d="{star(17, 29, 15, .1)}"/>'
+  f'<path class="s2" fill="url(#hsg2)" d="{star(38, 11, 8, .1)}"/>'
+  f'<path class="s3" fill="#b35a53" d="{star(39.5, 38, 4.5, .1)}"/></svg>')
+
 MARQUEE = "".join(f"<span>{n}</span><i>{SPARK}</i>" for n, _ in WORK * 4)
 
 home = f'''    <section class="hero" data-sparkle>
@@ -126,9 +135,8 @@ home = f'''    <section class="hero" data-sparkle>
             <a href="investors" class="btn btn-outline">For Investors{ARROW}</a>
           </div>
         </div>
-        <div class="hero-mark" aria-hidden="true">
-          <span class="mark-lg">{SPARK}</span>
-          <span class="wordmark-lg"><span class="wm">fairydust<span class="wm-v">ventures</span></span></span>
+        <div class="hero-star" aria-hidden="true" data-tilt>
+          {HERO_MARK}
         </div>
       </div>
     </section>

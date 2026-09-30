@@ -139,10 +139,25 @@ if (hero) {
     for (let i = 0; i < 14; i++) spark(e.clientX, e.clientY, 110);
   });
 
-  // One welcome burst from the logo card's star mark
-  // (on phones the card is hidden, so burst from the headline instead)
-  const cardStar = hero.querySelector(".hero-mark .mark-lg");
-  const origin = cardStar && cardStar.offsetParent ? cardStar : hero.querySelector(".shimmer");
+  // The floating mark leans gently toward the cursor
+  const tilt = hero.querySelector("[data-tilt] .hs-svg");
+  if (tilt && !calm) {
+    hero.addEventListener("pointermove", (e) => {
+      if (e.pointerType !== "mouse") return;
+      const r = tilt.getBoundingClientRect();
+      const dx = (e.clientX - (r.left + r.width / 2)) / window.innerWidth;
+      const dy = (e.clientY - (r.top + r.height / 2)) / window.innerHeight;
+      tilt.style.setProperty("--px", `${dx * 28}px`);
+      tilt.style.setProperty("--py", `${dy * 28}px`);
+      tilt.style.setProperty("--rot", `${dx * 8}deg`);
+    });
+    hero.addEventListener("pointerleave", () => {
+      ["--px", "--py", "--rot"].forEach((p) => tilt.style.removeProperty(p));
+    });
+  }
+
+  // One welcome burst from the big star
+  const origin = hero.querySelector(".hs-svg .s1") || hero.querySelector(".shimmer");
   if (origin) {
     setTimeout(() => {
       const r = origin.getBoundingClientRect();
