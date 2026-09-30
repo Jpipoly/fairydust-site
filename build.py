@@ -7,6 +7,7 @@ def star(cx, cy, r, k=0.16):
 # Three-star mark: one lead star, two smaller companions
 SPARK = ('<svg class="mark" viewBox="0 0 48 48" fill="currentColor" aria-hidden="true">'
          f'<path d="{star(17, 29, 15, .1)}"/><path d="{star(38, 11, 8, .1)}"/><path d="{star(39.5, 38, 4.5, .1)}" opacity=".75"/></svg>')
+STAR1 = f'<svg viewBox="-10 -10 20 20" fill="currentColor"><path d="{star(0, 0, 10, .1)}"/></svg>'
 LOGO = f'<span class="logo">{SPARK}<span class="wm">fairydust<span class="wm-v">ventures</span></span></span>'
 MENU = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>'
 
@@ -87,12 +88,27 @@ TEAM = [
     ("The PR Whisperer", "Makes your story impossible for press and LPs to ignore."),
 ]
 
+import random
+_rng = random.Random(7)
+_colors = ["var(--rose)", "var(--pink)", "var(--orange)", "var(--blush)"]
+_spots = []
+for i in range(22):
+    # keep most stars toward the edges so the headline stays clean
+    x = _rng.choice([_rng.uniform(1, 18), _rng.uniform(55, 98), _rng.uniform(1, 98)])
+    y = _rng.uniform(4, 94)
+    _spots.append(
+        f'<span class="hs" style="left:{x:.1f}%;top:{y:.1f}%;--s:{_rng.uniform(12, 34):.0f}px;'
+        f'--c:{_rng.choice(_colors)};--d:{_rng.uniform(3.5, 7.5):.1f}s;--dl:-{_rng.uniform(0, 7):.1f}s;'
+        f'--dx:{_rng.uniform(-14, 14):.0f}px;--dy:{_rng.uniform(-22, -6):.0f}px">{STAR1}</span>')
+HERO_SPARKLES = '<div class="hero-sparkles" aria-hidden="true">' + "".join(_spots) + "</div>"
+
 MARQUEE = "".join(f"<span>{n}</span><i>{SPARK}</i>" for n, _ in WORK * 4)
 
-home = f'''    <section class="hero">
+home = f'''    <section class="hero" data-sparkle>
+      {HERO_SPARKLES}
       <div class="wrap hero-grid">
         <div class="hero-copy">
-          <h1>On Tuesdays<br />we make<br />millionaires</h1>
+          <h1>On Tuesdays<br />we make<br /><span class="shimmer">millionaires</span></h1>
           <div class="hero-ctas">
             <a href="founders" class="btn btn-brown">For Founders</a>
             <a href="investors" class="btn btn-outline">For Investors</a>
