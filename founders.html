@@ -2,94 +2,87 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>For Founders — Fairydust Ventures</title>
-  <meta name="description" content="Share your idea. Fairydust brings the capital and the operating team you need to scale." />
-  <meta property="og:title" content="Fairydust Ventures" />
-  <meta property="og:description" content="On Tuesdays we make millionaires. Capital plus the operators who do the boring work." />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>For Founders | fairydust ventures</title>
+  <meta name="description" content="We want your vision, not your money. Share your idea with Fairydust." />
+  <meta name="theme-color" content="#ffaea3" />
+  <meta property="og:title" content="For Founders | fairydust ventures" />
+  <meta property="og:description" content="We want your vision, not your money. Share your idea with Fairydust." />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
   <header class="nav">
     <div class="wrap">
-      <a href="/" class="logo" aria-label="Fairydust Ventures home"><span class="logo-mark"></span>fairydust <span class="logo-sub">ventures</span></a>
-      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
-      <nav class="nav-links">
-        <a href="/#how">How it works</a>
-        <a href="/#team">Team</a>
-        <a href="investors">For Investors</a>
-        <a href="founders" class="btn-pill active">For Founders</a>
-      </nav>
+      <div class="nav-pill">
+        <a href="/" aria-label="fairydust ventures home"><span class="logo"><svg class="mark" viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path d="M19 10Q21.72 24.28 36 27Q21.72 29.72 19 44Q16.28 29.72 2 27Q16.28 24.28 19 10Z"/><path d="M38.5 1.0Q39.86 8.14 47.0 9.5Q39.86 10.86 38.5 18.0Q37.14 10.86 30.0 9.5Q37.14 8.14 38.5 1.0Z"/><path d="M40 31Q40.80 35.20 45 36Q40.80 36.80 40 41Q39.20 36.80 35 36Q39.20 35.20 40 31Z" opacity=".75"/></svg><span class="wm">fairydust<span class="wm-v">ventures</span></span></span></a>
+        <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+        <nav class="nav-links" id="menu">
+          <a href="/">Home</a>
+          <a href="investors">For Investors</a>
+          <a href="founders" aria-current="page">For Founders</a>
+        </nav>
+      </div>
     </div>
   </header>
 
   <main>
     <section class="page-hero">
       <div class="wrap">
-        <div class="eyebrow">For Founders</div>
-        <h1>We want your vision, <em>not your money.</em></h1>
-        <p class="lede">Founders should spend less time in front of a laptop doing boring stuff and more time thinking and building. Share your idea — we'll bring the capital and the operating team you need to scale.</p>
-        <div class="hero-ctas"><a href="#pitch" class="btn btn-gold">Share your idea <span class="arrow">→</span></a></div>
+        <h1>We want your vision, not your money.</h1>
+        <p class="lead">Share your ideas so we can provide the capital and expert operational backing you need to scale.</p>
+        <div class="hero-ctas"><a href="#pitch" class="btn btn-brown">Get in Touch</a></div>
       </div>
     </section>
 
-    <section style="padding-top:40px">
-      <div class="wrap">
-        <div class="section-head reveal">
-          <div class="eyebrow">What happens next</div>
-          <h2>Three steps. <em>No sales pitch.</em></h2>
-        </div>
-        <div class="steps">
-          <div class="step reveal"><h3>Share your idea</h3><p>Tell us what you're building. A deck helps, but <strong>the idea is what matters</strong>.</p></div>
-          <div class="step reveal"><h3>We get in touch</h3><p>We'll be in touch shortly to talk through the vision — <strong>not a sales pitch</strong>.</p></div>
-          <div class="step reveal"><h3>We sprinkle the dust</h3><p>Capital plus operators for <strong>legal, finance, HR, PR and marketing</strong>, so you can build.</p></div>
-        </div>
+    <section class="motto">
+      <div class="wrap reveal">
+        <blockquote>You bring the magic — we just sprinkle the dust.</blockquote>
+        <p class="motto-by">Our Motto</p>
+        <p class="body">We think founders should spend less time in front of a laptop doing boring stuff and more time thinking and building.</p>
       </div>
     </section>
 
-    <section id="pitch" style="padding-top:0">
-      <div class="wrap form-split">
+    <section class="boring" id="pitch">
+      <div class="wrap split">
         <div class="reveal">
-          <div class="eyebrow">Get in touch</div>
-          <h2 class="h2">So let's both skip the <em>sales pitch,</em> shall we?</h2>
-          <p style="color:var(--muted);margin-top:20px;font-size:19px">Share your idea with us and we'll be in touch shortly.</p>
-          <p style="color:var(--muted);margin-top:28px">Prefer email? <a href="mailto:ohhey@fairydust.vc" style="color:var(--gold)">ohhey@fairydust.vc</a></p>
+          <h2 class="h2">Get in touch with us</h2>
+          <p class="aside">So let's both skip the sales pitch shall we?</p>
         </div>
-        <form class="form-card reveal" data-mailto="ohhey@fairydust.vc" data-subject="New idea for Fairydust">
-          <div class="field"><label for="n">Name *</label><input id="n" name="Name" required /></div>
-          <div class="field"><label for="e">Email *</label><input id="e" name="Email" type="email" required /></div>
-          <div class="field"><label for="i">Idea *</label><textarea id="i" name="Idea" required placeholder="What are you building, and why now?"></textarea></div>
-          <div class="field"><label for="d">Pitch deck link</label><input id="d" name="Pitch deck" type="url" placeholder="https://docsend.com/..." /><span class="hint">Optional. Share a link (DocSend, Google Drive, PDF).</span></div>
-          <button class="btn btn-gold" type="submit">Send <span class="arrow">→</span></button>
-          <p class="form-ok">Your email app should open with your idea ready to send.</p>
-        </form>
+        <div class="panel reveal">
+          <h3 class="h2">Get in Touch</h3>
+          <p>Share your idea with us and we'll be in touch shortly.</p>
+          <form data-mailto="ohhey@fairydust.vc" data-subject="Share your idea — Fairydust" style="margin-top:28px">
+            <div class="field"><label for="n">Name *</label><input id="n" name="Name" autocomplete="name" required /></div>
+            <div class="field"><label for="e">Email *</label><input id="e" name="Email" type="email" autocomplete="email" inputmode="email" required /></div>
+            <div class="field"><label for="i">Idea *</label><textarea id="i" name="Idea" required></textarea></div>
+            <div class="field"><label for="d">Pitch deck</label><input id="d" name="Pitch deck" type="url" inputmode="url" placeholder="Link to your deck" /></div>
+            <button class="btn btn-pink" type="submit">Send</button>
+            <p class="form-ok">Your email app should now open with your idea ready to send.</p>
+          </form>
+        </div>
       </div>
     </section>
   </main>
 
   <footer>
     <div class="wrap">
-      <div class="foot-top">
-        <div class="foot-cta">
-          <h2>Founders bring the magic.<br /><em>We sprinkle the dust.</em></h2>
-          <a href="founders" class="btn btn-gold">Initiate magic <span class="arrow">→</span></a>
-        </div>
+      <div class="foot">
+        <span class="logo"><svg class="mark" viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path d="M19 10Q21.72 24.28 36 27Q21.72 29.72 19 44Q16.28 29.72 2 27Q16.28 24.28 19 10Z"/><path d="M38.5 1.0Q39.86 8.14 47.0 9.5Q39.86 10.86 38.5 18.0Q37.14 10.86 30.0 9.5Q37.14 8.14 38.5 1.0Z"/><path d="M40 31Q40.80 35.20 45 36Q40.80 36.80 40 41Q39.20 36.80 35 36Q39.20 35.20 40 31Z" opacity=".75"/></svg><span class="wm">fairydust<span class="wm-v">ventures</span></span></span>
         <div class="foot-info">
-          <span>1700 Montgomery Street, Suite 108</span>
-          <span>San Francisco, CA 94111</span>
+          1700 Montgomery Street Suite 108, San Francisco, CA 94111<br />
           <a href="mailto:ohhey@fairydust.vc">ohhey@fairydust.vc</a>
         </div>
+        <nav class="foot-nav"><a href="/">Home</a><a href="investors">For Investors</a><a href="founders">For Founders</a></nav>
       </div>
-      <div class="foot-bottom">
-        <span>© <span data-year>2026</span> Fairydust. All rights reserved. On Tuesdays, we make millionaires.</span>
-        <nav><a href="/">Home</a><a href="investors">For Investors</a><a href="founders">For Founders</a></nav>
-      </div>
+      <p class="copyright">© 2026 Fairydust. All rights reserved. On Tuesdays, we make millionaires.</p>
     </div>
   </footer>
-  <script src="main.js"></script>
+  <script src="main.js" defer></script>
 </body>
 </html>

@@ -2,187 +2,100 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Fairydust Ventures — Capital plus the operators who do the boring work</title>
-  <meta name="description" content="Fairydust Ventures invests in early-stage startups and gives founders an operating team for legal, finance, HR, PR and marketing — so they can focus on building." />
-  <meta property="og:title" content="Fairydust Ventures" />
-  <meta property="og:description" content="On Tuesdays we make millionaires. Capital plus the operators who do the boring work." />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Home | fairydust ventures</title>
+  <meta name="description" content="On Tuesdays we make millionaires. We inject capital and sprinkle the operational magic required to scale." />
+  <meta name="theme-color" content="#ffaea3" />
+  <meta property="og:title" content="Home | fairydust ventures" />
+  <meta property="og:description" content="On Tuesdays we make millionaires. We inject capital and sprinkle the operational magic required to scale." />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
   <header class="nav">
     <div class="wrap">
-      <a href="/" class="logo" aria-label="Fairydust Ventures home"><span class="logo-mark"></span>fairydust <span class="logo-sub">ventures</span></a>
-      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
-      <nav class="nav-links">
-        <a href="#how">How it works</a>
-        <a href="#team">Team</a>
-        <a href="investors">For Investors</a>
-        <a href="founders" class="btn-pill">For Founders</a>
-      </nav>
+      <div class="nav-pill">
+        <a href="/" aria-label="fairydust ventures home"><span class="logo"><svg class="mark" viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path d="M19 10Q21.72 24.28 36 27Q21.72 29.72 19 44Q16.28 29.72 2 27Q16.28 24.28 19 10Z"/><path d="M38.5 1.0Q39.86 8.14 47.0 9.5Q39.86 10.86 38.5 18.0Q37.14 10.86 30.0 9.5Q37.14 8.14 38.5 1.0Z"/><path d="M40 31Q40.80 35.20 45 36Q40.80 36.80 40 41Q39.20 36.80 35 36Q39.20 35.20 40 31Z" opacity=".75"/></svg><span class="wm">fairydust<span class="wm-v">ventures</span></span></span></a>
+        <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+        <nav class="nav-links" id="menu">
+          <a href="/" aria-current="page">Home</a>
+          <a href="investors">For Investors</a>
+          <a href="founders">For Founders</a>
+        </nav>
+      </div>
     </div>
   </header>
 
   <main>
-    <!-- 1. Hero: the value proposition in one screen -->
     <section class="hero">
-      <canvas id="dust" aria-hidden="true"></canvas>
-      <div class="wrap">
-        <div class="eyebrow">Fairydust Ventures · San Francisco</div>
-        <h1>On Tuesdays<br />we make <em>millionaires.</em></h1>
-        <p class="lede">
-          <strong>We invest in early-stage startups — and then we do the boring work.</strong>
-          Our operators handle legal, finance, HR, and PR so founders can focus on the vision.
-        </p>
-        <div class="hero-ctas">
-          <a href="founders" class="btn btn-gold">I'm a founder <span class="arrow">→</span></a>
-          <a href="investors" class="btn btn-ghost">I'm an investor <span class="arrow">→</span></a>
-        </div>
-        <div class="hero-proof">
-          <span class="chip">Legal</span><span class="chip">Operations</span><span class="chip">Finance</span>
-          <span class="chip">HR</span><span class="chip">PR &amp; Branding</span><span class="chip">Marketing</span>
-        </div>
-      </div>
-      <div class="scroll-cue">Scroll</div>
-    </section>
-
-    <!-- 2. The Magic Logic: capital + operators = scale -->
-    <section id="how">
-      <div class="wrap">
-        <div class="section-head reveal">
-          <div class="eyebrow">The Magic Logic</div>
-          <h2>Yes. We inject capital.<br /><em>But we don't stop there.</em></h2>
-          <p>We sprinkle the operational magic required to scale.</p>
-        </div>
-        <div class="equation reveal">
-          <div class="eq-card">
-            <span class="label">What you get</span>
-            <h3>Capital</h3>
-            <p>Flexible, deal-by-deal funding for early-stage teams.</p>
-          </div>
-          <div class="eq-op">+</div>
-          <div class="eq-card">
-            <span class="label">What makes it work</span>
-            <h3>Operators</h3>
-            <p>A team that handles the legal, finance, and PR heavy lifting.</p>
-          </div>
-          <div class="eq-op">=</div>
-          <div class="eq-card result">
-            <span class="label">The result</span>
-            <h3>Industry powerhouses</h3>
-            <p>Founders stay on the vision. We handle the boring work — with surgical precision and a sprinkle of mystery.</p>
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <h1>On Tuesdays<br />we make<br />millionaires</h1>
+          <div class="hero-ctas">
+            <a href="founders" class="btn btn-brown">For Founders</a>
+            <a href="investors" class="btn btn-outline">For Investors</a>
           </div>
         </div>
-        <p class="quote-line reveal">"We are the fairydust sprinklers, <span>turning ambitious ideas into industry powerhouses.</span>"</p>
-      </div>
-    </section>
-
-    <!-- 3. The Boring Work -->
-    <section class="light" id="work">
-      <div class="wrap">
-        <div class="section-head reveal">
-          <div class="eyebrow">The Boring Work</div>
-          <h2>Everything that slows founders down. <em>Handled.</em></h2>
-          <p>Six areas our operators take off your plate from day one.</p>
-        </div>
-        <div class="grid-6 reveal">
-          <div class="work">
-            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M5 7h14M5 7l-3 7a4 4 0 0 0 6 0L5 7zm14 0-3 7a4 4 0 0 0 6 0l-3-7zM8 21h8"/></svg></div>
-            <span class="num">01</span><h3>Legal</h3>
-            <p>We handle all the tricky paperwork and red tape so you don't have to.</p>
-          </div>
-          <div class="work">
-            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></div>
-            <span class="num">02</span><h3>Operations</h3>
-            <p>We build the scalable systems and processes that keep your rocketship from falling apart mid-flight.</p>
-          </div>
-          <div class="work">
-            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 6-6"/></svg></div>
-            <span class="num">03</span><h3>Finance</h3>
-            <p>We manage the capital injection and financial modeling, including payroll and FP&amp;A.</p>
-          </div>
-          <div class="work">
-            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></svg></div>
-            <span class="num">04</span><h3>HR</h3>
-            <p>We handle the people ops and HR management so your team can actually focus on building.</p>
-          </div>
-          <div class="work">
-            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.4 6.8 19.1l1-5.8L3.5 9.2l5.9-.9z"/></svg></div>
-            <span class="num">05</span><h3>PR &amp; Branding</h3>
-            <p>We craft the narrative and the image that makes you the industry powerhouse.</p>
-          </div>
-          <div class="work">
-            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11v2a1 1 0 0 0 1 1h3l5 4V6L7 10H4a1 1 0 0 0-1 1z"/><path d="M16 8a5 5 0 0 1 0 8M19 5a9 9 0 0 1 0 14"/></svg></div>
-            <span class="num">06</span><h3>Marketing</h3>
-            <p>We plan and execute your marketing from 0–1 or 1–2 so the right people actually hear about you.</p>
-          </div>
-        </div>
-        <div class="boring-foot reveal">
-          <p><strong>You bring the magic.</strong> We just sprinkle the dust.</p>
-          <a href="founders" class="btn btn-dark">Pitch us your idea <span class="arrow">→</span></a>
+        <div class="hero-mark" aria-hidden="true">
+          <span class="tw tw1"><svg class="mark" viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path d="M19 10Q21.72 24.28 36 27Q21.72 29.72 19 44Q16.28 29.72 2 27Q16.28 24.28 19 10Z"/><path d="M38.5 1.0Q39.86 8.14 47.0 9.5Q39.86 10.86 38.5 18.0Q37.14 10.86 30.0 9.5Q37.14 8.14 38.5 1.0Z"/><path d="M40 31Q40.80 35.20 45 36Q40.80 36.80 40 41Q39.20 36.80 35 36Q39.20 35.20 40 31Z" opacity=".75"/></svg></span><span class="tw tw2"><svg class="mark" viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path d="M19 10Q21.72 24.28 36 27Q21.72 29.72 19 44Q16.28 29.72 2 27Q16.28 24.28 19 10Z"/><path d="M38.5 1.0Q39.86 8.14 47.0 9.5Q39.86 10.86 38.5 18.0Q37.14 10.86 30.0 9.5Q37.14 8.14 38.5 1.0Z"/><path d="M40 31Q40.80 35.20 45 36Q40.80 36.80 40 41Q39.20 36.80 35 36Q39.20 35.20 40 31Z" opacity=".75"/></svg></span><span class="tw tw3"><svg class="mark" viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path d="M19 10Q21.72 24.28 36 27Q21.72 29.72 19 44Q16.28 29.72 2 27Q16.28 24.28 19 10Z"/><path d="M38.5 1.0Q39.86 8.14 47.0 9.5Q39.86 10.86 38.5 18.0Q37.14 10.86 30.0 9.5Q37.14 8.14 38.5 1.0Z"/><path d="M40 31Q40.80 35.20 45 36Q40.80 36.80 40 41Q39.20 36.80 35 36Q39.20 35.20 40 31Z" opacity=".75"/></svg></span>
+          <span class="logo"><svg class="mark" viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path d="M19 10Q21.72 24.28 36 27Q21.72 29.72 19 44Q16.28 29.72 2 27Q16.28 24.28 19 10Z"/><path d="M38.5 1.0Q39.86 8.14 47.0 9.5Q39.86 10.86 38.5 18.0Q37.14 10.86 30.0 9.5Q37.14 8.14 38.5 1.0Z"/><path d="M40 31Q40.80 35.20 45 36Q40.80 36.80 40 41Q39.20 36.80 35 36Q39.20 35.20 40 31Z" opacity=".75"/></svg><span class="wm">fairydust<span class="wm-v">ventures</span></span></span>
         </div>
       </div>
     </section>
 
-    <!-- 4. The Sprinklers -->
-    <section id="team">
+    <div class="marquee" aria-hidden="true"><div class="marquee-track"><span>Legal</span><i><svg class="mark" viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path d="M19 10Q21.72 24.28 36 27Q21.72 29.72 19 44Q16.28 29.72 2 27Q16.28 24.28 19 10Z"/><path d="M38.5 1.0Q39.86 8.14 47.0 9.5Q39.86 10.86 38.5 18.0Q37.14 10.86 30.0 9.5Q37.14 8.14 38.5 1.0Z"/><path d="M40 31Q40.80 35.20 45 36Q40.80 36.80 40 41Q39.20 36.80 35 36Q39.20 35.20 40 31Z" opacity=".75"/></svg></i><span>Operations</span><i><svg class="mark" viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path d="M19 10Q21.72 24.28 36 27Q21.72 29.72 19 44Q16.28 29.72 2 27Q16.28 24.28 19 10Z"/><path d="M38.5 1.0Q39.86 8.14 47.0 9.5Q39.86 10.86 38.5 18.0Q37.14 10.86 30.0 9.5Q37.14 8.14 38.5 1.0Z"/><path d="M40 31Q40.80 35.20 45 36Q40.80 36.80 40 41Q39.20 36.80 35 36Q39.20 35.20 40 31Z" opacity=".75"/></svg></i><span>Finance</span><i><svg class="mark" viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path d="M19 10Q21.72 24.28 36 27Q21.72 29.72 19 44Q16.28 29.72 2 27Q16.28 24.28 19 10Z"/><path d="M38.5 1.0Q39.86 8.14 47.0 9.5Q39.86 10.86 38.5 18.0Q37.14 10.86 30.0 9.5Q37.14 8.14 38.5 1.0Z"/><path d="M40 31Q40.80 35.20 45 36Q40.80 36.80 40 41Q39.20 36.80 35 36Q39.20 35.20 40 31Z" opacity=".75"/></svg></i><span>HR</span><i><svg class="mark" viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path d="M19 10Q21.72 24.28 36 27Q21.72 29.72 19 44Q16.28 29.72 2 27Q16.28 24.28 19 10Z"/><path d="M38.5 1.0Q39.86 8.14 47.0 9.5Q39.86 10.86 38.5 18.0Q37.14 10.86 30.0 9.5Q37.14 8.14 38.5 1.0Z"/><path d="M40 31Q40.80 35.20 45 36Q40.80 36.80 40 41Q39.20 36.80 35 36Q39.20 35.20 40 31Z" opacity=".75"/></svg></i><span>PR &amp; Branding</span><i><svg class="mark" viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path d="M19 10Q21.72 24.28 36 27Q21.72 29.72 19 44Q16.28 29.72 2 27Q16.28 24.28 19 10Z"/><path d="M38.5 1.0Q39.86 8.14 47.0 9.5Q39.86 10.86 38.5 18.0Q37.14 10.86 30.0 9.5Q37.14 8.14 38.5 1.0Z"/><path d="M40 31Q40.80 35.20 45 36Q40.80 36.80 40 41Q39.20 36.80 35 36Q39.20 35.20 40 31Z" opacity=".75"/></svg></i><span>Marketing</span><i><svg class="mark" viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path d="M19 10Q21.72 24.28 36 27Q21.72 29.72 19 44Q16.28 29.72 2 27Q16.28 24.28 19 10Z"/><path d="M38.5 1.0Q39.86 8.14 47.0 9.5Q39.86 10.86 38.5 18.0Q37.14 10.86 30.0 9.5Q37.14 8.14 38.5 1.0Z"/><path d="M40 31Q40.80 35.20 45 36Q40.80 36.80 40 41Q39.20 36.80 35 36Q39.20 35.20 40 31Z" opacity=".75"/></svg></i><span>Legal</span><i><svg class="mark" viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path d="M19 10Q21.72 24.28 36 27Q21.72 29.72 19 44Q16.28 29.72 2 27Q16.28 24.28 19 10Z"/><path d="M38.5 1.0Q39.86 8.14 47.0 9.5Q39.86 10.86 38.5 18.0Q37.14 10.86 30.0 9.5Q37.14 8.14 38.5 1.0Z"/><path d="M40 31Q40.80 35.20 45 36Q40.80 36.80 40 41Q39.20 36.80 35 36Q39.20 35.20 40 31Z" opacity=".75"/></svg></i><span>Operations</span><i><svg class="mark" viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path d="M19 10Q21.72 24.28 36 27Q21.72 29.72 19 44Q16.28 29.72 2 27Q16.28 24.28 19 10Z"/><path d="M38.5 1.0Q39.86 8.14 47.0 9.5Q39.86 10.86 38.5 18.0Q37.14 10.86 30.0 9.5Q37.14 8.14 38.5 1.0Z"/><path d="M40 31Q40.80 35.20 45 36Q40.80 36.80 40 41Q39.20 36.80 35 36Q39.20 35.20 40 31Z" opacity=".75"/></svg></i><span>Finance</span><i><svg class="mark" viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path d="M19 10Q21.72 24.28 36 27Q21.72 29.72 19 44Q16.28 29.72 2 27Q16.28 24.28 19 10Z"/><path d="M38.5 1.0Q39.86 8.14 47.0 9.5Q39.86 10.86 38.5 18.0Q37.14 10.86 30.0 9.5Q37.14 8.14 38.5 1.0Z"/><path d="M40 31Q40.80 35.20 45 36Q40.80 36.80 40 41Q39.20 36.80 35 36Q39.20 35.20 40 31Z" opacity=".75"/></svg></i><span>HR</span><i><svg class="mark" viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path d="M19 10Q21.72 24.28 36 27Q21.72 29.72 19 44Q16.28 29.72 2 27Q16.28 24.28 19 10Z"/><path d="M38.5 1.0Q39.86 8.14 47.0 9.5Q39.86 10.86 38.5 18.0Q37.14 10.86 30.0 9.5Q37.14 8.14 38.5 1.0Z"/><path d="M40 31Q40.80 35.20 45 36Q40.80 36.80 40 41Q39.20 36.80 35 36Q39.20 35.20 40 31Z" opacity=".75"/></svg></i><span>PR &amp; Branding</span><i><svg class="mark" viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path d="M19 10Q21.72 24.28 36 27Q21.72 29.72 19 44Q16.28 29.72 2 27Q16.28 24.28 19 10Z"/><path d="M38.5 1.0Q39.86 8.14 47.0 9.5Q39.86 10.86 38.5 18.0Q37.14 10.86 30.0 9.5Q37.14 8.14 38.5 1.0Z"/><path d="M40 31Q40.80 35.20 45 36Q40.80 36.80 40 41Q39.20 36.80 35 36Q39.20 35.20 40 31Z" opacity=".75"/></svg></i><span>Marketing</span><i><svg class="mark" viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path d="M19 10Q21.72 24.28 36 27Q21.72 29.72 19 44Q16.28 29.72 2 27Q16.28 24.28 19 10Z"/><path d="M38.5 1.0Q39.86 8.14 47.0 9.5Q39.86 10.86 38.5 18.0Q37.14 10.86 30.0 9.5Q37.14 8.14 38.5 1.0Z"/><path d="M40 31Q40.80 35.20 45 36Q40.80 36.80 40 41Q39.20 36.80 35 36Q39.20 35.20 40 31Z" opacity=".75"/></svg></i><span>Legal</span><i><svg class="mark" viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path d="M19 10Q21.72 24.28 36 27Q21.72 29.72 19 44Q16.28 29.72 2 27Q16.28 24.28 19 10Z"/><path d="M38.5 1.0Q39.86 8.14 47.0 9.5Q39.86 10.86 38.5 18.0Q37.14 10.86 30.0 9.5Q37.14 8.14 38.5 1.0Z"/><path d="M40 31Q40.80 35.20 45 36Q40.80 36.80 40 41Q39.20 36.80 35 36Q39.20 35.20 40 31Z" opacity=".75"/></svg></i><span>Operations</span><i><svg class="mark" viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path d="M19 10Q21.72 24.28 36 27Q21.72 29.72 19 44Q16.28 29.72 2 27Q16.28 24.28 19 10Z"/><path d="M38.5 1.0Q39.86 8.14 47.0 9.5Q39.86 10.86 38.5 18.0Q37.14 10.86 30.0 9.5Q37.14 8.14 38.5 1.0Z"/><path d="M40 31Q40.80 35.20 45 36Q40.80 36.80 40 41Q39.20 36.80 35 36Q39.20 35.20 40 31Z" opacity=".75"/></svg></i><span>Finance</span><i><svg class="mark" viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path d="M19 10Q21.72 24.28 36 27Q21.72 29.72 19 44Q16.28 29.72 2 27Q16.28 24.28 19 10Z"/><path d="M38.5 1.0Q39.86 8.14 47.0 9.5Q39.86 10.86 38.5 18.0Q37.14 10.86 30.0 9.5Q37.14 8.14 38.5 1.0Z"/><path d="M40 31Q40.80 35.20 45 36Q40.80 36.80 40 41Q39.20 36.80 35 36Q39.20 35.20 40 31Z" opacity=".75"/></svg></i><span>HR</span><i><svg class="mark" viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path d="M19 10Q21.72 24.28 36 27Q21.72 29.72 19 44Q16.28 29.72 2 27Q16.28 24.28 19 10Z"/><path d="M38.5 1.0Q39.86 8.14 47.0 9.5Q39.86 10.86 38.5 18.0Q37.14 10.86 30.0 9.5Q37.14 8.14 38.5 1.0Z"/><path d="M40 31Q40.80 35.20 45 36Q40.80 36.80 40 41Q39.20 36.80 35 36Q39.20 35.20 40 31Z" opacity=".75"/></svg></i><span>PR &amp; Branding</span><i><svg class="mark" viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path d="M19 10Q21.72 24.28 36 27Q21.72 29.72 19 44Q16.28 29.72 2 27Q16.28 24.28 19 10Z"/><path d="M38.5 1.0Q39.86 8.14 47.0 9.5Q39.86 10.86 38.5 18.0Q37.14 10.86 30.0 9.5Q37.14 8.14 38.5 1.0Z"/><path d="M40 31Q40.80 35.20 45 36Q40.80 36.80 40 41Q39.20 36.80 35 36Q39.20 35.20 40 31Z" opacity=".75"/></svg></i><span>Marketing</span><i><svg class="mark" viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path d="M19 10Q21.72 24.28 36 27Q21.72 29.72 19 44Q16.28 29.72 2 27Q16.28 24.28 19 10Z"/><path d="M38.5 1.0Q39.86 8.14 47.0 9.5Q39.86 10.86 38.5 18.0Q37.14 10.86 30.0 9.5Q37.14 8.14 38.5 1.0Z"/><path d="M40 31Q40.80 35.20 45 36Q40.80 36.80 40 41Q39.20 36.80 35 36Q39.20 35.20 40 31Z" opacity=".75"/></svg></i><span>Legal</span><i><svg class="mark" viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path d="M19 10Q21.72 24.28 36 27Q21.72 29.72 19 44Q16.28 29.72 2 27Q16.28 24.28 19 10Z"/><path d="M38.5 1.0Q39.86 8.14 47.0 9.5Q39.86 10.86 38.5 18.0Q37.14 10.86 30.0 9.5Q37.14 8.14 38.5 1.0Z"/><path d="M40 31Q40.80 35.20 45 36Q40.80 36.80 40 41Q39.20 36.80 35 36Q39.20 35.20 40 31Z" opacity=".75"/></svg></i><span>Operations</span><i><svg class="mark" viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path d="M19 10Q21.72 24.28 36 27Q21.72 29.72 19 44Q16.28 29.72 2 27Q16.28 24.28 19 10Z"/><path d="M38.5 1.0Q39.86 8.14 47.0 9.5Q39.86 10.86 38.5 18.0Q37.14 10.86 30.0 9.5Q37.14 8.14 38.5 1.0Z"/><path d="M40 31Q40.80 35.20 45 36Q40.80 36.80 40 41Q39.20 36.80 35 36Q39.20 35.20 40 31Z" opacity=".75"/></svg></i><span>Finance</span><i><svg class="mark" viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path d="M19 10Q21.72 24.28 36 27Q21.72 29.72 19 44Q16.28 29.72 2 27Q16.28 24.28 19 10Z"/><path d="M38.5 1.0Q39.86 8.14 47.0 9.5Q39.86 10.86 38.5 18.0Q37.14 10.86 30.0 9.5Q37.14 8.14 38.5 1.0Z"/><path d="M40 31Q40.80 35.20 45 36Q40.80 36.80 40 41Q39.20 36.80 35 36Q39.20 35.20 40 31Z" opacity=".75"/></svg></i><span>HR</span><i><svg class="mark" viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path d="M19 10Q21.72 24.28 36 27Q21.72 29.72 19 44Q16.28 29.72 2 27Q16.28 24.28 19 10Z"/><path d="M38.5 1.0Q39.86 8.14 47.0 9.5Q39.86 10.86 38.5 18.0Q37.14 10.86 30.0 9.5Q37.14 8.14 38.5 1.0Z"/><path d="M40 31Q40.80 35.20 45 36Q40.80 36.80 40 41Q39.20 36.80 35 36Q39.20 35.20 40 31Z" opacity=".75"/></svg></i><span>PR &amp; Branding</span><i><svg class="mark" viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path d="M19 10Q21.72 24.28 36 27Q21.72 29.72 19 44Q16.28 29.72 2 27Q16.28 24.28 19 10Z"/><path d="M38.5 1.0Q39.86 8.14 47.0 9.5Q39.86 10.86 38.5 18.0Q37.14 10.86 30.0 9.5Q37.14 8.14 38.5 1.0Z"/><path d="M40 31Q40.80 35.20 45 36Q40.80 36.80 40 41Q39.20 36.80 35 36Q39.20 35.20 40 31Z" opacity=".75"/></svg></i><span>Marketing</span><i><svg class="mark" viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path d="M19 10Q21.72 24.28 36 27Q21.72 29.72 19 44Q16.28 29.72 2 27Q16.28 24.28 19 10Z"/><path d="M38.5 1.0Q39.86 8.14 47.0 9.5Q39.86 10.86 38.5 18.0Q37.14 10.86 30.0 9.5Q37.14 8.14 38.5 1.0Z"/><path d="M40 31Q40.80 35.20 45 36Q40.80 36.80 40 41Q39.20 36.80 35 36Q39.20 35.20 40 31Z" opacity=".75"/></svg></i></div></div>
+
+    <section class="magic" id="magic">
+      <div class="wrap magic-grid">
+        <h2 class="h2 reveal">The Magic Logic</h2>
+        <div class="magic-body reveal">
+          <p class="first">Yes. We inject capital.</p>
+          <p class="lead">But we don't just inject capital; we sprinkle the operational magic required to scale.</p>
+          <p>Our team of operators handles the legal, finance, and PR heavy lifting, allowing your startup to focus on the vision while we handle the boring work.</p>
+          <p class="quiet">We are the fairydust sprinklers, turning ambitious ideas into industry powerhouses with surgical precision and a sprinkle of mystery.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="sprinklers" id="sprinklers">
       <div class="wrap">
         <div class="section-head reveal">
-          <div class="eyebrow">The Sprinklers</div>
-          <h2>Meet the <em>operators.</em></h2>
-          <p>Our powerhouse operators turn ambition into industry leadership through operational magic.</p>
+          <h2 class="h2">The Sprinklers</h2>
+          <p class="lead">Our powerhouse operators who turn ambition into industry leadership through operational magic.</p>
         </div>
         <div class="team">
-          <article class="member reveal">
-            <div class="orb">$</div>
-            <span class="role">Finance</span>
-            <h3>The Finance Nerd</h3>
-            <p>Turns messy cap tables into clean, investor-ready stories.</p>
-          </article>
-          <article class="member reveal">
-            <div class="orb">§</div>
-            <span class="role">Policy &amp; Legal</span>
-            <h3>The Policy Worrier</h3>
-            <p>Spots the regulatory landmines before anyone else does.</p>
-          </article>
-          <article class="member reveal">
-            <div class="orb">✦</div>
-            <span class="role">PR &amp; Story</span>
-            <h3>The PR Whisperer</h3>
-            <p>Makes your story impossible for press and LPs to ignore.</p>
-          </article>
+          <article class="member reveal"><span class="spark"><svg class="mark" viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path d="M19 10Q21.72 24.28 36 27Q21.72 29.72 19 44Q16.28 29.72 2 27Q16.28 24.28 19 10Z"/><path d="M38.5 1.0Q39.86 8.14 47.0 9.5Q39.86 10.86 38.5 18.0Q37.14 10.86 30.0 9.5Q37.14 8.14 38.5 1.0Z"/><path d="M40 31Q40.80 35.20 45 36Q40.80 36.80 40 41Q39.20 36.80 35 36Q39.20 35.20 40 31Z" opacity=".75"/></svg></span><h3>The Finance Nerd</h3><p>Turns messy cap tables into clean, investor-ready stories.</p></article>
+          <article class="member reveal"><span class="spark"><svg class="mark" viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path d="M19 10Q21.72 24.28 36 27Q21.72 29.72 19 44Q16.28 29.72 2 27Q16.28 24.28 19 10Z"/><path d="M38.5 1.0Q39.86 8.14 47.0 9.5Q39.86 10.86 38.5 18.0Q37.14 10.86 30.0 9.5Q37.14 8.14 38.5 1.0Z"/><path d="M40 31Q40.80 35.20 45 36Q40.80 36.80 40 41Q39.20 36.80 35 36Q39.20 35.20 40 31Z" opacity=".75"/></svg></span><h3>The Policy Worrier</h3><p>Spots the regulatory landmines before anyone else does.</p></article>
+          <article class="member reveal"><span class="spark"><svg class="mark" viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path d="M19 10Q21.72 24.28 36 27Q21.72 29.72 19 44Q16.28 29.72 2 27Q16.28 24.28 19 10Z"/><path d="M38.5 1.0Q39.86 8.14 47.0 9.5Q39.86 10.86 38.5 18.0Q37.14 10.86 30.0 9.5Q37.14 8.14 38.5 1.0Z"/><path d="M40 31Q40.80 35.20 45 36Q40.80 36.80 40 41Q39.20 36.80 35 36Q39.20 35.20 40 31Z" opacity=".75"/></svg></span><h3>The PR Whisperer</h3><p>Makes your story impossible for press and LPs to ignore.</p></article>
         </div>
       </div>
     </section>
 
-    <!-- 5. Choose your path -->
-    <section style="padding-top: 0">
+    <section class="boring" id="boring">
       <div class="wrap">
-        <div class="section-head reveal">
-          <div class="eyebrow">Want some sprinkles?</div>
-          <h2>Pick your <em>door.</em></h2>
+        <div class="section-head reveal"><h2 class="h2">The Boring Work</h2></div>
+        <div class="work-list">
+          <div class="work reveal"><span class="work-n">01</span><h3>Legal</h3><p>We handle all the tricky paperwork and red tape so you don’t have to.</p></div>
+          <div class="work reveal"><span class="work-n">02</span><h3>Operations</h3><p>We build the scalable systems and processes that keep your rocketship from falling apart mid-flight.</p></div>
+          <div class="work reveal"><span class="work-n">03</span><h3>Finance</h3><p>We manage the capital injection and financial modeling, including payroll and FP&amp;A.</p></div>
+          <div class="work reveal"><span class="work-n">04</span><h3>HR</h3><p>We handle the people ops and HR management so your team can actually focus on building.</p></div>
+          <div class="work reveal"><span class="work-n">05</span><h3>PR &amp; Branding</h3><p>We craft the narrative and the image that makes you the industry powerhouse.</p></div>
+          <div class="work reveal"><span class="work-n">06</span><h3>Marketing</h3><p>We plan and execute your marketing from 0–1 or 1–2 so the right people actually hear about you.</p></div>
         </div>
-        <div class="paths">
-          <a href="founders" class="path founders reveal">
-            <div>
-              <span class="kicker">For Founders</span>
-              <h3>We want your vision, not your money.</h3>
-              <p>Share your idea. We'll bring the capital and the operating team you need to scale.</p>
-            </div>
-            <span class="go">Initiate magic <span class="arrow">→</span></span>
-          </a>
-          <a href="investors" class="path investors reveal">
-            <div>
-              <span class="kicker">For Investors</span>
-              <h3>Get on our deals list.</h3>
-              <p>Deal-by-deal SPVs. Exclusive Fairydust deal updates, straight to your inbox.</p>
-            </div>
-            <span class="go">See the fund <span class="arrow">→</span></span>
-          </a>
+      </div>
+    </section>
+
+    <section class="cta-sec">
+      <div class="wrap">
+        <div class="cta-card reveal">
+          <span class="tw tw1" aria-hidden="true"><svg class="mark" viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path d="M19 10Q21.72 24.28 36 27Q21.72 29.72 19 44Q16.28 29.72 2 27Q16.28 24.28 19 10Z"/><path d="M38.5 1.0Q39.86 8.14 47.0 9.5Q39.86 10.86 38.5 18.0Q37.14 10.86 30.0 9.5Q37.14 8.14 38.5 1.0Z"/><path d="M40 31Q40.80 35.20 45 36Q40.80 36.80 40 41Q39.20 36.80 35 36Q39.20 35.20 40 31Z" opacity=".75"/></svg></span><span class="tw tw2" aria-hidden="true"><svg class="mark" viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path d="M19 10Q21.72 24.28 36 27Q21.72 29.72 19 44Q16.28 29.72 2 27Q16.28 24.28 19 10Z"/><path d="M38.5 1.0Q39.86 8.14 47.0 9.5Q39.86 10.86 38.5 18.0Q37.14 10.86 30.0 9.5Q37.14 8.14 38.5 1.0Z"/><path d="M40 31Q40.80 35.20 45 36Q40.80 36.80 40 41Q39.20 36.80 35 36Q39.20 35.20 40 31Z" opacity=".75"/></svg></span>
+          <h2 class="h2">Want Some Sprinkles?</h2>
+          <a href="founders" class="btn btn-pink">Initiate Magic</a>
         </div>
       </div>
     </section>
@@ -190,23 +103,17 @@
 
   <footer>
     <div class="wrap">
-      <div class="foot-top">
-        <div class="foot-cta">
-          <h2>Founders bring the magic.<br /><em>We sprinkle the dust.</em></h2>
-          <a href="founders" class="btn btn-gold">Initiate magic <span class="arrow">→</span></a>
-        </div>
+      <div class="foot">
+        <span class="logo"><svg class="mark" viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path d="M19 10Q21.72 24.28 36 27Q21.72 29.72 19 44Q16.28 29.72 2 27Q16.28 24.28 19 10Z"/><path d="M38.5 1.0Q39.86 8.14 47.0 9.5Q39.86 10.86 38.5 18.0Q37.14 10.86 30.0 9.5Q37.14 8.14 38.5 1.0Z"/><path d="M40 31Q40.80 35.20 45 36Q40.80 36.80 40 41Q39.20 36.80 35 36Q39.20 35.20 40 31Z" opacity=".75"/></svg><span class="wm">fairydust<span class="wm-v">ventures</span></span></span>
         <div class="foot-info">
-          <span>1700 Montgomery Street, Suite 108</span>
-          <span>San Francisco, CA 94111</span>
+          1700 Montgomery Street Suite 108, San Francisco, CA 94111<br />
           <a href="mailto:ohhey@fairydust.vc">ohhey@fairydust.vc</a>
         </div>
+        <nav class="foot-nav"><a href="/">Home</a><a href="investors">For Investors</a><a href="founders">For Founders</a></nav>
       </div>
-      <div class="foot-bottom">
-        <span>© <span data-year>2026</span> Fairydust. All rights reserved. On Tuesdays, we make millionaires.</span>
-        <nav><a href="/">Home</a><a href="investors">For Investors</a><a href="founders">For Founders</a></nav>
-      </div>
+      <p class="copyright">© 2026 Fairydust. All rights reserved. On Tuesdays, we make millionaires.</p>
     </div>
   </footer>
-  <script src="main.js"></script>
+  <script src="main.js" defer></script>
 </body>
 </html>

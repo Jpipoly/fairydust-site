@@ -1,6 +1,8 @@
 # Fairydust Ventures website
 
-Static redesign of fairydust.vc. No build step.
+Static redesign of fairydust.vc using the original copy and color palette.
+
+Pages are generated from `build.py` (shared nav/footer). After editing it, run `python3 build.py`.
 
 - `index.html` — home (value prop, how it works, the boring work, team, paths)
 - `investors.html` — For Investors (SPV model + deals list)
