@@ -13,11 +13,14 @@ MENU = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width=
 ARROW = '<span class="btn-ic" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>'
 
 import hashlib
+
+# Form endpoints (e.g. "https://formspree.io/f/abcdwxyz"). Empty = email fallback.
+FORMS = {"founders": "", "investors": ""}
 def ver(path):
     return hashlib.md5(open(path, "rb").read()).hexdigest()[:8]
 
 def page(slug, title, desc, body):
-    body = body.replace("{ARROW}", ARROW)
+    body = body.replace("{ARROW}", ARROW).replace("{FORM_FOUNDERS}", FORMS["founders"]).replace("{FORM_INVESTORS}", FORMS["investors"])
     def cur(key):
         return ' aria-current="page"' if key == slug else ''
     def links(cls):
@@ -100,20 +103,6 @@ TEAM = [
     ("The PR Whisperer", "Makes your story impossible for press and LPs to ignore."),
 ]
 
-import random
-_rng = random.Random(7)
-_colors = ["var(--rose)", "var(--pink)", "var(--orange)", "var(--blush)"]
-_spots = []
-for i in range(22):
-    # keep most stars toward the edges so the headline stays clean
-    x = _rng.choice([_rng.uniform(1, 18), _rng.uniform(55, 98), _rng.uniform(1, 98)])
-    y = _rng.uniform(4, 94)
-    _spots.append(
-        f'<span class="hs" style="left:{x:.1f}%;top:{y:.1f}%;--s:{_rng.uniform(12, 34):.0f}px;'
-        f'--c:{_rng.choice(_colors)};--d:{_rng.uniform(3.5, 7.5):.1f}s;--dl:-{_rng.uniform(0, 7):.1f}s;'
-        f'--dx:{_rng.uniform(-14, 14):.0f}px;--dy:{_rng.uniform(-22, -6):.0f}px">{STAR1}</span>')
-HERO_SPARKLES = '<div class="hero-sparkles" aria-hidden="true">' + "".join(_spots) + "</div>"
-
 HERO_MARK = ('<svg viewBox="0 0 48 48" class="hs-svg"><defs>'
   '<linearGradient id="hsg" x1="0" y1="0" x2="1" y2="1">'
   '<stop offset="0" stop-color="#ffaea3"/><stop offset=".5" stop-color="#ff7143"/><stop offset="1" stop-color="#b35a53"/></linearGradient>'
@@ -123,13 +112,13 @@ HERO_MARK = ('<svg viewBox="0 0 48 48" class="hs-svg"><defs>'
   f'<path class="s2" fill="url(#hsg2)" d="{star(38, 11, 8, .1)}"/>'
   f'<path class="s3" fill="#b35a53" d="{star(39.5, 38, 4.5, .1)}"/></svg>')
 
-MARQUEE = "".join(f"<span>{n}</span><i>{SPARK}</i>" for n, _ in WORK * 4)
+MARQUEE = f"<i>{SPARK}</i>".join(f"<span>{n}</span>" for n, _ in WORK)
 
 home = f'''    <section class="hero" data-sparkle>
-      {HERO_SPARKLES}
       <div class="wrap hero-grid">
         <div class="hero-copy">
           <h1>On Tuesdays<br />we make<br /><span class="shimmer">millionaires</span></h1>
+          <p class="hero-lead"><strong>We inject capital</strong> — and sprinkle the operational magic required to scale.</p>
           <div class="hero-ctas">
             <a href="founders" class="btn btn-brown">For Founders{ARROW}</a>
             <a href="investors" class="btn btn-outline">For Investors{ARROW}</a>
@@ -141,7 +130,7 @@ home = f'''    <section class="hero" data-sparkle>
       </div>
     </section>
 
-    <div class="marquee" aria-hidden="true"><div class="marquee-track">{MARQUEE}</div></div>
+    <div class="marquee"><div class="marquee-track">{MARQUEE}</div></div>
 
     <section class="magic" id="magic">
       <div class="wrap magic-grid">
@@ -209,10 +198,11 @@ investors = '''    <section class="page-hero">
         <div class="panel reveal">
           <h3 class="h2">Get on our deals list</h3>
           <p>Receive exclusive updates on the latest Fairydust deal opportunities straight to your inbox.</p>
-          <form data-mailto="ohhey@fairydust.vc" data-subject="Get on the Fairydust deals list" style="margin-top:28px">
+          <form class="js-form" data-endpoint="{FORM_INVESTORS}" data-mailto="ohhey@fairydust.vc" data-subject="Get on the Fairydust deals list" novalidate style="margin-top:28px">
             <div class="field"><label for="em">Email address *</label><input id="em" name="Email address" type="email" autocomplete="email" inputmode="email" required /></div>
+            <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" />
             <button class="btn btn-pink" type="submit">Join the list{ARROW}</button>
-            <p class="form-ok">Your email app should now open with a message ready to send.</p>
+            <p class="form-status" role="status" aria-live="polite"></p>
           </form>
         </div>
       </div>
@@ -245,13 +235,21 @@ founders = '''    <section class="page-hero">
         <div class="panel reveal">
           <h3 class="h2">Get in Touch</h3>
           <p>Share your idea with us and we'll be in touch shortly.</p>
-          <form data-mailto="ohhey@fairydust.vc" data-subject="Share your idea — Fairydust" style="margin-top:28px">
+          <form class="js-form" data-endpoint="{FORM_FOUNDERS}" data-mailto="ohhey@fairydust.vc" data-subject="Share your idea — Fairydust" enctype="multipart/form-data" novalidate style="margin-top:28px">
             <div class="field"><label for="n">Name *</label><input id="n" name="Name" autocomplete="name" required /></div>
             <div class="field"><label for="e">Email *</label><input id="e" name="Email" type="email" autocomplete="email" inputmode="email" required /></div>
             <div class="field"><label for="i">Idea *</label><textarea id="i" name="Idea" required></textarea></div>
-            <div class="field"><label for="d">Pitch deck</label><input id="d" name="Pitch deck" type="url" inputmode="url" placeholder="Link to your deck" /></div>
+            <div class="field">
+              <span class="label">Pitch deck</span>
+              <label class="drop" for="d">
+                <input id="d" name="Pitch deck" type="file" accept=".pdf,.ppt,.pptx,.key,.doc,.docx" />
+                <span class="drop-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V4M7 9l5-5 5 5M5 20h14"/></svg></span>
+                <span class="drop-text"><strong class="drop-name">Upload deck</strong><span class="drop-hint">Please upload a document file (PDF, PPTX, etc.)</span></span>
+              </label>
+            </div>
+            <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" />
             <button class="btn btn-pink" type="submit">Send{ARROW}</button>
-            <p class="form-ok">Your email app should now open with your idea ready to send.</p>
+            <p class="form-status" role="status" aria-live="polite"></p>
           </form>
         </div>
       </div>

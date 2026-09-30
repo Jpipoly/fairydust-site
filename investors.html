@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=bc85d6ee" />
+  <link rel="stylesheet" href="styles.css?v=6acfe1db" />
   <script>document.documentElement.classList.add("js")</script>
 </head>
 <body id="top">
@@ -48,10 +48,11 @@
         <div class="panel reveal">
           <h3 class="h2">Get on our deals list</h3>
           <p>Receive exclusive updates on the latest Fairydust deal opportunities straight to your inbox.</p>
-          <form data-mailto="ohhey@fairydust.vc" data-subject="Get on the Fairydust deals list" style="margin-top:28px">
+          <form class="js-form" data-endpoint="" data-mailto="ohhey@fairydust.vc" data-subject="Get on the Fairydust deals list" novalidate style="margin-top:28px">
             <div class="field"><label for="em">Email address *</label><input id="em" name="Email address" type="email" autocomplete="email" inputmode="email" required /></div>
+            <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" />
             <button class="btn btn-pink" type="submit">Join the list<span class="btn-ic" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></button>
-            <p class="form-ok">Your email app should now open with a message ready to send.</p>
+            <p class="form-status" role="status" aria-live="polite"></p>
           </form>
         </div>
       </div>
@@ -86,6 +87,6 @@
       </div>
     </div>
   </footer>
-  <script src="main.js?v=fe2a0cc6" defer></script>
+  <script src="main.js?v=66a322e8" defer></script>
 </body>
 </html>

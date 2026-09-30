@@ -67,19 +67,86 @@ if ("IntersectionObserver" in window) {
   document.querySelectorAll(".reveal").forEach((el) => el.classList.add("in"));
 }
 
-// Forms: no backend yet, so they open a pre-filled email to ohhey@fairydust.vc
-document.querySelectorAll("form[data-mailto]").forEach((form) => {
-  form.addEventListener("submit", (e) => {
+// ---------- Forms ----------
+// Posts to the form service in data-endpoint. With no endpoint set, falls back to a pre-filled email.
+const MAX_MB = 10;
+const DECK_TYPES = /\.(pdf|pptx?|key|docx?)$/i;
+
+document.querySelectorAll(".js-form").forEach((form) => {
+  const status = form.querySelector(".form-status");
+  const btn = form.querySelector('button[type="submit"]');
+  const drop = form.querySelector(".drop");
+  const file = drop && drop.querySelector('input[type="file"]');
+  const say = (msg, kind = "") => { status.className = "form-status " + kind; status.innerHTML = msg; };
+
+  // Deck upload: show the chosen file, check type and size, support drag and drop
+  if (drop && file) {
+    const name = drop.querySelector(".drop-name"), hint = drop.querySelector(".drop-hint");
+    const label = name.textContent, hintText = hint.textContent;
+    const show = () => {
+      const f = file.files[0];
+      drop.classList.toggle("has-file", !!f);
+      drop.classList.remove("invalid");
+      if (!f) { name.textContent = label; hint.textContent = hintText; return; }
+      name.textContent = f.name;
+      hint.textContent = `${(f.size / 1048576).toFixed(1)} MB`;
+      if (!DECK_TYPES.test(f.name) || f.size > MAX_MB * 1048576) {
+        drop.classList.add("invalid");
+        hint.textContent = hintText + ` Max ${MAX_MB} MB.`;
+      }
+    };
+    file.addEventListener("change", show);
+    ["dragenter", "dragover"].forEach((t) => drop.addEventListener(t, (e) => { e.preventDefault(); drop.classList.add("dragging"); }));
+    ["dragleave", "drop"].forEach((t) => drop.addEventListener(t, () => drop.classList.remove("dragging")));
+    drop.addEventListener("drop", (e) => {
+      e.preventDefault();
+      if (e.dataTransfer.files.length) { file.files = e.dataTransfer.files; show(); }
+    });
+  }
+
+  form.addEventListener("submit", async (e) => {
     e.preventDefault();
-    const lines = [];
-    for (const [k, v] of new FormData(form).entries()) if (v) lines.push(`${k}: ${v}`);
-    const subject = encodeURIComponent(form.dataset.subject || "Hello Fairydust");
-    const body = encodeURIComponent(lines.join("\n\n"));
-    const btn = form.querySelector('button[type="submit"]');
-    if (btn) { btn.setAttribute("aria-busy", "true"); setTimeout(() => btn.removeAttribute("aria-busy"), 1500); }
-    window.location.href = `mailto:${form.dataset.mailto}?subject=${subject}&body=${body}`;
-    const ok = form.querySelector(".form-ok");
-    if (ok) ok.style.display = "block";
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+    if (drop && drop.classList.contains("invalid")) {
+      say(`Please upload a document file (PDF, PPTX, etc.) under ${MAX_MB} MB.`, "err");
+      return;
+    }
+    if (form.querySelector(".hp").value) return; // bot
+
+    const endpoint = form.dataset.endpoint;
+    const mailto = () => {
+      const lines = [];
+      for (const [k, v] of new FormData(form).entries()) {
+        if (k === "_gotcha") continue;
+        if (v instanceof File) { if (v.name) lines.push(`${k}: ${v.name} (attached)`); }
+        else if (v) lines.push(`${k}: ${v}`);
+      }
+      return `mailto:${form.dataset.mailto}?subject=${encodeURIComponent(form.dataset.subject)}&body=${encodeURIComponent(lines.join("\n\n"))}`;
+    };
+
+    if (!endpoint) {
+      window.location.href = mailto();
+      say(file && file.files[0] ? "Your email app should open now. Please attach your deck before sending." : "Your email app should open now.");
+      return;
+    }
+
+    btn.setAttribute("aria-busy", "true");
+    say("Sending…");
+    try {
+      const res = await fetch(endpoint, { method: "POST", body: new FormData(form), headers: { Accept: "application/json" } });
+      if (!res.ok) throw new Error(res.status);
+      form.classList.add("sent");
+      say("Thanks — we'll be in touch shortly. ✦", "ok");
+      const r = status.getBoundingClientRect();
+      for (let i = 0; i < 16; i++) spark(r.left + 40, r.top + 12, 120, ["#ffaea3", "#edc2b4", "#ff7143"]);
+    } catch {
+      say(`Something went wrong. Please try again, or email us at <a href="${mailto()}">${form.dataset.mailto}</a>.`, "err");
+    } finally {
+      btn.removeAttribute("aria-busy");
+    }
   });
 });
 
@@ -123,45 +190,11 @@ document.addEventListener("pointerdown", (e) => {
   for (let i = 0; i < 9; i++) spark(x, y, 55, onDark ? ["#ffaea3", "#edc2b4", "#ff7143"] : COLORS);
 });
 
-// Hero: trail follows the mouse, tap/click anywhere bursts
+// Hero: tap/click anywhere releases a burst
 const hero = document.querySelector("[data-sparkle]");
 if (hero) {
-  let last = 0;
-  hero.addEventListener("pointermove", (e) => {
-    if (e.pointerType !== "mouse") return;
-    const now = performance.now();
-    if (now - last < 45) return;
-    last = now;
-    spark(e.clientX, e.clientY, 30);
-  });
   hero.addEventListener("pointerdown", (e) => {
     if (e.target.closest(".btn, a")) return;
     for (let i = 0; i < 14; i++) spark(e.clientX, e.clientY, 110);
   });
-
-  // The floating mark leans gently toward the cursor
-  const tilt = hero.querySelector("[data-tilt] .hs-svg");
-  if (tilt && !calm) {
-    hero.addEventListener("pointermove", (e) => {
-      if (e.pointerType !== "mouse") return;
-      const r = tilt.getBoundingClientRect();
-      const dx = (e.clientX - (r.left + r.width / 2)) / window.innerWidth;
-      const dy = (e.clientY - (r.top + r.height / 2)) / window.innerHeight;
-      tilt.style.setProperty("--px", `${dx * 28}px`);
-      tilt.style.setProperty("--py", `${dy * 28}px`);
-      tilt.style.setProperty("--rot", `${dx * 8}deg`);
-    });
-    hero.addEventListener("pointerleave", () => {
-      ["--px", "--py", "--rot"].forEach((p) => tilt.style.removeProperty(p));
-    });
-  }
-
-  // One welcome burst from the big star
-  const origin = hero.querySelector(".hs-svg .s1") || hero.querySelector(".shimmer");
-  if (origin) {
-    setTimeout(() => {
-      const r = origin.getBoundingClientRect();
-      for (let i = 0; i < 18; i++) setTimeout(() => spark(r.left + r.width / 2, r.top + r.height / 2, 160), i * 35);
-    }, 600);
-  }
 }
