@@ -14,6 +14,46 @@ if (toggle) {
   document.addEventListener("keydown", (e) => e.key === "Escape" && setOpen(false));
 }
 
+// Header: tighten + deepen shadow once the page scrolls
+const navEl = document.querySelector(".nav");
+const onScroll = () => navEl && navEl.classList.toggle("scrolled", window.scrollY > 16);
+onScroll();
+window.addEventListener("scroll", onScroll, { passive: true });
+
+// Nav + footer links: a soft pill slides to whichever link you point at or tab to
+document.querySelectorAll("[data-ind]").forEach((group) => {
+  const ind = group.querySelector(".nav-ind");
+  if (!ind) return;
+  const moveTo = (link) => {
+    // appearing from hidden: jump into place, then slide between links after that
+    const fresh = ind.style.opacity !== "1";
+    if (fresh) ind.style.transition = "opacity .2s ease";
+    ind.style.width = link.offsetWidth + "px";
+    ind.style.height = link.offsetHeight + "px";
+    ind.style.top = link.offsetTop + "px";
+    ind.style.transform = `translateX(${link.offsetLeft}px)`;
+    ind.style.opacity = "1";
+    if (fresh) { ind.offsetWidth; ind.style.transition = ""; }
+  };
+  const hide = () => (ind.style.opacity = "0");
+  group.querySelectorAll(".nav-link").forEach((link) => {
+    link.addEventListener("pointerenter", (e) => e.pointerType === "mouse" && moveTo(link));
+    link.addEventListener("focus", () => link.matches(":focus-visible") && moveTo(link));
+    link.addEventListener("blur", hide);
+  });
+  group.addEventListener("pointerleave", hide);
+  group.querySelectorAll(".btn").forEach((b) => b.addEventListener("pointerenter", hide));
+});
+
+// Back to top
+document.querySelectorAll('a[href="#top"]').forEach((a) =>
+  a.addEventListener("click", (e) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: calmMotion() ? "auto" : "smooth" });
+  })
+);
+function calmMotion() { return window.matchMedia("(prefers-reduced-motion: reduce)").matches; }
+
 // Reveal on scroll
 if ("IntersectionObserver" in window) {
   const io = new IntersectionObserver(

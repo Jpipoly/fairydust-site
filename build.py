@@ -18,9 +18,11 @@ def ver(path):
 
 def page(slug, title, desc, body):
     body = body.replace("{ARROW}", ARROW)
-    def nav_link(href, label, key):
-        cur = ' aria-current="page"' if key == slug else ''
-        return f'<a href="{href}"{cur}>{label}</a>'
+    def cur(key):
+        return ' aria-current="page"' if key == slug else ''
+    def links(cls):
+        return (f'<a class="nav-link" href="/"{cur("home")}>Home</a>'
+                f'<a class="nav-link" href="investors"{cur("investors")}>For Investors</a>')
     return f'''<!doctype html>
 <html lang="en">
 <head>
@@ -39,16 +41,16 @@ def page(slug, title, desc, body):
   <link rel="stylesheet" href="styles.css?v={ver("styles.css")}" />
   <script>document.documentElement.classList.add("js")</script>
 </head>
-<body>
+<body id="top">
   <header class="nav">
     <div class="wrap">
       <div class="nav-pill">
-        <a href="/" aria-label="fairydust ventures home">{LOGO}</a>
+        <a class="logo-link" href="/" aria-label="fairydust ventures home">{LOGO}</a>
         <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="menu">{MENU}</button>
-        <nav class="nav-links" id="menu">
-          {nav_link("/", "Home", "home")}
-          {nav_link("investors", "For Investors", "investors")}
-          {nav_link("founders", "For Founders", "founders")}
+        <nav class="nav-links" id="menu" data-ind>
+          <span class="nav-ind" aria-hidden="true"></span>
+          {links("nav")}
+          <a class="btn btn-brown btn-sm" href="founders"{cur("founders")}>For Founders{ARROW}</a>
         </nav>
       </div>
     </div>
@@ -60,15 +62,23 @@ def page(slug, title, desc, body):
 
   <footer>
     <div class="wrap">
-      <div class="foot">
-        {LOGO}
-        <div class="foot-info">
-          1700 Montgomery Street Suite 108,<br />San Francisco, CA 94111<br />
-          <a href="mailto:ohhey@fairydust.vc">ohhey@fairydust.vc</a>
+      <div class="foot-top">
+        <div>
+          <a class="logo-link" href="/" aria-label="fairydust ventures home">{LOGO}</a><br />
+          <a class="foot-mail" href="mailto:ohhey@fairydust.vc">ohhey@fairydust.vc{ARROW}</a>
         </div>
-        <nav class="foot-nav"><a href="/">Home</a><a href="investors">For Investors</a><a href="founders">For Founders</a></nav>
+        <nav class="foot-nav" data-ind aria-label="Footer">
+          <span class="nav-ind" aria-hidden="true"></span>
+          <a class="nav-link" href="/"{cur("home")}>Home</a>
+          <a class="nav-link" href="investors"{cur("investors")}>For Investors</a>
+          <a class="nav-link" href="founders"{cur("founders")}>For Founders</a>
+        </nav>
       </div>
-      <p class="copyright">© 2026 Fairydust. All rights reserved. On Tuesdays, we make millionaires.</p>
+      <div class="foot-bottom">
+        <span class="foot-addr">1700 Montgomery Street Suite 108, San Francisco, CA 94111</span>
+        <span class="copyright">© 2026 Fairydust. All rights reserved. On Tuesdays, we make millionaires.</span>
+        <a class="btn to-top" href="#top" aria-label="Back to top"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 13V3M4 7l4-4 4 4"/></svg></a>
+      </div>
     </div>
   </footer>
   <script src="main.js?v={ver("main.js")}" defer></script>

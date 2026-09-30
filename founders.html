@@ -13,19 +13,19 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=3da26c9e" />
+  <link rel="stylesheet" href="styles.css?v=5ba9a278" />
   <script>document.documentElement.classList.add("js")</script>
 </head>
-<body>
+<body id="top">
   <header class="nav">
     <div class="wrap">
       <div class="nav-pill">
-        <a href="/" aria-label="fairydust ventures home"><span class="logo"><svg class="mark" viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path d="M17 14Q18.50 27.50 32 29Q18.50 30.50 17 44Q15.50 30.50 2 29Q15.50 27.50 17 14Z"/><path d="M38 3Q38.80 10.20 46 11Q38.80 11.80 38 19Q37.20 11.80 30 11Q37.20 10.20 38 3Z"/><path d="M39.5 33.5Q39.95 37.55 44.0 38Q39.95 38.45 39.5 42.5Q39.05 38.45 35.0 38Q39.05 37.55 39.5 33.5Z" opacity=".75"/></svg><span class="wm">fairydust<span class="wm-v">ventures</span></span></span></a>
+        <a class="logo-link" href="/" aria-label="fairydust ventures home"><span class="logo"><svg class="mark" viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path d="M17 14Q18.50 27.50 32 29Q18.50 30.50 17 44Q15.50 30.50 2 29Q15.50 27.50 17 14Z"/><path d="M38 3Q38.80 10.20 46 11Q38.80 11.80 38 19Q37.20 11.80 30 11Q37.20 10.20 38 3Z"/><path d="M39.5 33.5Q39.95 37.55 44.0 38Q39.95 38.45 39.5 42.5Q39.05 38.45 35.0 38Q39.05 37.55 39.5 33.5Z" opacity=".75"/></svg><span class="wm">fairydust<span class="wm-v">ventures</span></span></span></a>
         <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path class="l1" d="M4 7h16"/><path class="l2" d="M4 12h16"/><path class="l3" d="M4 17h16"/></svg></button>
-        <nav class="nav-links" id="menu">
-          <a href="/">Home</a>
-          <a href="investors">For Investors</a>
-          <a href="founders" aria-current="page">For Founders</a>
+        <nav class="nav-links" id="menu" data-ind>
+          <span class="nav-ind" aria-hidden="true"></span>
+          <a class="nav-link" href="/">Home</a><a class="nav-link" href="investors">For Investors</a>
+          <a class="btn btn-brown btn-sm" href="founders" aria-current="page">For Founders<span class="btn-ic" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a>
         </nav>
       </div>
     </div>
@@ -72,17 +72,25 @@
 
   <footer>
     <div class="wrap">
-      <div class="foot">
-        <span class="logo"><svg class="mark" viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path d="M17 14Q18.50 27.50 32 29Q18.50 30.50 17 44Q15.50 30.50 2 29Q15.50 27.50 17 14Z"/><path d="M38 3Q38.80 10.20 46 11Q38.80 11.80 38 19Q37.20 11.80 30 11Q37.20 10.20 38 3Z"/><path d="M39.5 33.5Q39.95 37.55 44.0 38Q39.95 38.45 39.5 42.5Q39.05 38.45 35.0 38Q39.05 37.55 39.5 33.5Z" opacity=".75"/></svg><span class="wm">fairydust<span class="wm-v">ventures</span></span></span>
-        <div class="foot-info">
-          1700 Montgomery Street Suite 108,<br />San Francisco, CA 94111<br />
-          <a href="mailto:ohhey@fairydust.vc">ohhey@fairydust.vc</a>
+      <div class="foot-top">
+        <div>
+          <a class="logo-link" href="/" aria-label="fairydust ventures home"><span class="logo"><svg class="mark" viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path d="M17 14Q18.50 27.50 32 29Q18.50 30.50 17 44Q15.50 30.50 2 29Q15.50 27.50 17 14Z"/><path d="M38 3Q38.80 10.20 46 11Q38.80 11.80 38 19Q37.20 11.80 30 11Q37.20 10.20 38 3Z"/><path d="M39.5 33.5Q39.95 37.55 44.0 38Q39.95 38.45 39.5 42.5Q39.05 38.45 35.0 38Q39.05 37.55 39.5 33.5Z" opacity=".75"/></svg><span class="wm">fairydust<span class="wm-v">ventures</span></span></span></a><br />
+          <a class="foot-mail" href="mailto:ohhey@fairydust.vc">ohhey@fairydust.vc<span class="btn-ic" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a>
         </div>
-        <nav class="foot-nav"><a href="/">Home</a><a href="investors">For Investors</a><a href="founders">For Founders</a></nav>
+        <nav class="foot-nav" data-ind aria-label="Footer">
+          <span class="nav-ind" aria-hidden="true"></span>
+          <a class="nav-link" href="/">Home</a>
+          <a class="nav-link" href="investors">For Investors</a>
+          <a class="nav-link" href="founders" aria-current="page">For Founders</a>
+        </nav>
       </div>
-      <p class="copyright">© 2026 Fairydust. All rights reserved. On Tuesdays, we make millionaires.</p>
+      <div class="foot-bottom">
+        <span class="foot-addr">1700 Montgomery Street Suite 108, San Francisco, CA 94111</span>
+        <span class="copyright">© 2026 Fairydust. All rights reserved. On Tuesdays, we make millionaires.</span>
+        <a class="btn to-top" href="#top" aria-label="Back to top"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 13V3M4 7l4-4 4 4"/></svg></a>
+      </div>
     </div>
   </footer>
-  <script src="main.js?v=dec331ca" defer></script>
+  <script src="main.js?v=00b6fb01" defer></script>
 </body>
 </html>
