@@ -6,9 +6,13 @@ def star(cx, cy, r, k=0.16):
 
 # Three-star mark: one lead star, two smaller companions
 SPARK = ('<svg class="mark" viewBox="0 0 48 48" fill="currentColor" aria-hidden="true">'
-         f'<path d="{star(19, 27, 17)}"/><path d="{star(38.5, 9.5, 8.5)}"/><path d="{star(40, 36, 5)}" opacity=".75"/></svg>')
+         f'<path d="{star(17, 29, 15, .1)}"/><path d="{star(38, 11, 8, .1)}"/><path d="{star(39.5, 38, 4.5, .1)}" opacity=".75"/></svg>')
 LOGO = f'<span class="logo">{SPARK}<span class="wm">fairydust<span class="wm-v">ventures</span></span></span>'
 MENU = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>'
+
+import hashlib
+def ver(path):
+    return hashlib.md5(open(path, "rb").read()).hexdigest()[:8]
 
 def page(slug, title, desc, body):
     def nav_link(href, label, key):
@@ -24,12 +28,12 @@ def page(slug, title, desc, body):
   <meta name="theme-color" content="#ffaea3" />
   <meta property="og:title" content="{title}" />
   <meta property="og:description" content="{desc}" />
-  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="favicon.svg?v={ver("favicon.svg")}" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="apple-touch-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,600..700,0..100,0..1&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v={ver("styles.css")}" />
   <script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
@@ -64,7 +68,7 @@ def page(slug, title, desc, body):
       <p class="copyright">© 2026 Fairydust. All rights reserved. On Tuesdays, we make millionaires.</p>
     </div>
   </footer>
-  <script src="main.js" defer></script>
+  <script src="main.js?v={ver("main.js")}" defer></script>
 </body>
 </html>
 '''
